@@ -1,0 +1,38 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.tab_salaire1 {
+    background-color: lightgray !important;
+    text-align: center;
+    border-block-color: black;
+    border-style: solid;
+}
+.tab_salaire2 {
+    text-align: center;
+    border-block-color: black;
+    border-style:solid;
+    /* Add other styling properties as needed */
+}
+/****************************button de la page salaire*****************/
+#openMatrixButton {
+    display: block;
+    margin: auto;
+    margin-top: 20px; /* Adjust the top margin as needed */
+    padding: 15px 30px; /* Adjust padding for button size */
+    font-size: 18px; /* Adjust font size */
+}

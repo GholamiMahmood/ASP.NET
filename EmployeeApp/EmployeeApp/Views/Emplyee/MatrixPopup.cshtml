@@ -1,0 +1,113 @@
+﻿@{
+    Layout = null; // Set the layout to null to exclude the layout
+}
+@model List<EmployeeApp.Models.Salary>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+ </head>
+       <body> 
+       
+       @* 
+       //si on veut afficher l'information de personne , soit nom d'identifiant ou la list de salaire.    
+   
+       <p>@Context.Request.Query["identifiant"]</p> 
+         <div>
+            <h2>Salary List</h2>
+            <ul id="salaryList">
+                @foreach (var salary in Model)
+                {
+                    <li>@salary.Salaire, @salary.Date.ToString("yyyy-MM-dd")</li>
+                }
+            </ul>
+        </div> *@    
+        
+            <style>
+                table {
+                    border-collapse: collapse;
+                    width: 50%;
+                    margin-top: 20px;
+                }
+
+                th, td {
+                    border: 1px solid black;
+                    padding: 8px;
+                    text-align: center;
+                    font-size: 14px;
+                }
+
+                th {
+                    background-color: blue;
+                    color: white;
+                }
+            </style>
+    
+            <table>
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    @for (var i = DateTime.Now.Year; i > DateTime.Now.Year - 10; i--)
+                    {
+                        <th>@i</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    // Extract salaryModel from the Model
+                    var salaryModel = Model;
+
+                    // Create a dictionary to store accumulated salaries for each month and year
+                    var accumulatedSalaries = new Dictionary<string, Dictionary<int, decimal>>();
+
+                    foreach (var salaryEntry in salaryModel)
+                    {
+                        var year = salaryEntry.Date.Year;
+                        var month = salaryEntry.Date.Month;
+
+                        var monthKey = $"{year}-{month}";
+
+                        if (!accumulatedSalaries.ContainsKey(monthKey))
+                        {
+                            accumulatedSalaries[monthKey] = new Dictionary<int, decimal>();
+                        }
+
+                        if (!accumulatedSalaries[monthKey].ContainsKey(year))
+                        {
+                            accumulatedSalaries[monthKey][year] = 0;
+                        }
+
+                        accumulatedSalaries[monthKey][year] += salaryEntry.Salaire;
+                    }
+
+                    // Display total salary per month in the table
+                    var monthNames = Enumerable.Range(1, 12)
+                    .Select(month => new DateTime(2000, month, 1).ToString("MMMM"))
+                    .ToList();
+
+                    foreach (var monthName in monthNames)
+                    {
+                        <tr>
+                            <td>@monthName</td>
+                            @for (var i = DateTime.Now.Year; i > DateTime.Now.Year - 10; i--)
+                            {
+                                var monthKey = $"{i}-{monthNames.IndexOf(monthName) + 1}";
+                                var totalSalary = accumulatedSalaries.ContainsKey(monthKey) ?
+                                accumulatedSalaries[monthKey].Sum(kv => kv.Value) :
+                                0;
+                                <td>@totalSalary</td>
+                            }
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </body>    
+</html>
+
+
+

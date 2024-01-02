@@ -1,0 +1,73 @@
+﻿@model IEnumerable<EmployeeApp.Models.EmplyeeEntity>
+
+@{
+    ViewData["Title"] = "Graphiques";
+}
+<h1 style="text-align: center;">Graphiques </h1>
+<br />
+<h4>&emsp;&emsp;&emsp;&emsp;Départements</h4>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pie Chart Example</title>
+    @*d3je est une bibliotheque pour designer les graphes.*@
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+
+    <div style="display: flex; align-items: center;">
+        <div id="myPieChart" style="width: 350px; height: 350px;"></div>
+        <div id="legend" style="margin-left: 20px; text-align: left;">
+            @foreach (var item in Model)
+            {
+                <p style="display: none;">@item.Department</p>
+            }
+        </div>
+    </div>
+    @* on n utilise pas la funtion. porquoi? pareceque la page doit afficher, sans click sur on Button *@
+     <script>
+        var data = Object.entries([...document.querySelectorAll('p')].reduce((acc, p) => (acc[p.innerText] = (acc[p.innerText] || 0) + 1, acc), {}));
+       var color = d3.scaleOrdinal().range(['#4CAF50', '#FFC107', '#2196F3', '#FF5722', '#9C27B0', '#FF9800', '#03A9F4', '#E91E63']);
+        var pie = d3.pie().value(d => d[1]);
+        var arc = d3.arc().innerRadius(0).outerRadius(175);
+
+        var svg = d3.select("#myPieChart")
+                    .append("svg")
+                    .attr("width", 350)
+                    .attr("height", 350)
+                    .append("g")
+                    .attr("transform", "translate(175, 175)");
+
+        var arcs = svg.selectAll("arc")
+                      .data(pie(data))
+                      .enter()
+                      .append("g")
+                      .attr("class", "arc");
+
+        arcs.append("path").attr("fill", (d, i) => color(i)).attr("d", arc);
+
+        var totalDepartments = data.reduce((acc, val) => acc + val[1], 0);
+
+        var legend = d3.select("#legend")
+            .selectAll("div")
+            .data([...data, ['Total', totalDepartments]])
+            .enter()
+            .append("div")
+            .style("margin-bottom", "5px");
+
+        legend.append("div")
+            .style("display", "inline-block")
+            .style("width", "12px")
+            .style("height", "12px")
+            .style("margin-right", "5px")
+            .style("background-color", (d, i) => (d[0] !== 'Total') ? color(i) : 'transparent');
+
+        legend.append("div")
+            .style("display", "inline-block")
+            .text(d => `${d[0]}: ${d[1] !== undefined ? `${d[1]} (${((d[1] / totalDepartments) * 100).toFixed(1)}%)` : d[1]}`);
+    </script>
+ </body>
+</html>
+

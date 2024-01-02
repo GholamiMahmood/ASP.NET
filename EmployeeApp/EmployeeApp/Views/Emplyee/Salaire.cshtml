@@ -1,0 +1,99 @@
+﻿@model EmployeeApp.Models.EmplyeeEntity
+
+@{
+    ViewData["Title"] = "Salaire";
+}
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+</head>
+<body>
+<h1>Recherche d'employé</h1>
+
+<form asp-action="Salaire" method="post">
+    <label for="personalId">Enter Identifiant:</label>
+    <input type="text" id="personalId" name="personalId" required>
+    <button type="submit">Search</button>
+</form>
+<br/>
+
+@if (Context.Request.Method == "POST")
+{
+    if (!string.IsNullOrEmpty(ViewData["SearchMessage"] as string))
+    {
+        <p>@ViewData["SearchMessage"]</p>
+    }
+    else if (Model != null)
+    {
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="col-sm-2 tab_salaire1">Identifiant</th>
+                    <th class="col-sm-2 tab_salaire1">FirstName</th>
+                    <th class="col-sm-2 tab_salaire1">LastName</th>
+                    <th class="col-sm-2 tab_salaire1">Department</th>
+                    <th class="col-sm-2 tab_salaire1">Email</th>
+                    <th class="col-sm-2 tab_salaire1">Telephone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-sm-2 tab_salaire2">@Html.DisplayFor(model => model.Identifiant)</td>
+                    <td class="col-sm-2 tab_salaire2">@Html.DisplayFor(model => model.FirstName)</td>
+                    <td class="col-sm-2 tab_salaire2">@Html.DisplayFor(model => model.LastName)</td>
+                    <td class="col-sm-2 tab_salaire2">@Html.DisplayFor(model => model.Department)</td>
+                    <td class="col-sm-2 tab_salaire2">@Html.DisplayFor(model => model.Email)</td>
+                    <td class="col-sm-2 tab_salaire2">@Html.DisplayFor(model => model.Telephone)</td>
+                </tr>
+            </tbody>
+        </table>
+        
+
+    }
+}
+@if (Model != null)
+{
+    <!-- salaryForm is an item in ajax, the function is registeSalary exist in site.js
+        , cela est pour afficher le meassage an cas de succes oue echac ##############
+        action="RegisterySalary , this function is in EmployeeController, cela utilise
+        cette fountion pour enregistre 3 variable dans le base de donnees.    -->
+    <div id="salaryContainer">
+        <form id="salaryForm" action="RegisterSalary" method="post">
+            <hr/>
+            <h5>vous pouvez enregistre le salire de personne</h5>
+
+            <label for="salaire">Salaire:</label>
+            <input type="text" id="salaire" name="salaire" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <!-- on n a pas besoin de le repeter, c est porqois on met hidden.,do n't repeat yourself. -->
+ 
+            <input type="hidden" id="identifiant" name="identifiant" value="@Model.Identifiant">
+                   
+             <button type="button" onclick="registerSalary()">Register Salary</button>
+        </form>            
+    </div>
+    @* button *@
+    <br />
+    <hr />
+    <button id="openMatrixButton" onclick="openMatrixButton(@Model.Identifiant)" class="btn btn-primary">affich l'histoire de salaire</button>
+    }
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
