@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
 
-    - name: Create minimal .csproj
-      run: echo '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net6.0</TargetFramework></PropertyGroup></Project>' > EmployeeApp.csproj
+    - name: Navigate to EmployeeApp folder
+      run: cd EmployeeApp
 
     - name: Restore dependencies
       run: dotnet restore
@@ -27,5 +27,14 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release
 
-    - name: Run application
-      run: dotnet run --configuration Release
+    - name: Run tests
+      run: dotnet test --configuration Release
+
+    - name: Publish Artifact
+      run: dotnet publish --configuration Release --output publish
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./EmployeeApp/publish
