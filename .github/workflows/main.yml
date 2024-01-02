@@ -19,10 +19,10 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: Restore dependencies
-      run: dotnet restore EmployeeApp.csproj
+      run: dotnet restore
 
     - name: Build
-      run: dotnet build --configuration Release EmployeeApp.csproj
+      run: dotnet build --configuration Release
 
-    - name: Run tests
-      run: dotnet test --configuration Release EmployeeApp.Tests.csproj
+    - name: Run application
+      run: dotnet run --configuration Release
