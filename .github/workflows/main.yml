@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout code
@@ -22,19 +22,19 @@ jobs:
       run: cd EmployeeApp
 
     - name: Restore dependencies
-      run: dotnet restore EmployeeApp.csproj
+      run: dotnet restore
 
     - name: Build
-      run: dotnet build --configuration Release EmployeeApp.csproj
+      run: dotnet build --configuration Release
 
     - name: Run tests
-      run: dotnet test --configuration Release EmployeeApp.Tests.csproj
+      run: dotnet test --configuration Release
 
     - name: Publish Artifact
-      run: dotnet publish --configuration Release --output publish EmployeeApp.csproj
+      run: dotnet publish --configuration Release --output publish
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./EmployeeApp/publish
+        publish_dir: ./publish
