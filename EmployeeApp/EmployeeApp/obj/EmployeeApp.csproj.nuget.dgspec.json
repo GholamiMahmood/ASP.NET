@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\EmployeeApp\\EmployeeApp\\EmployeeApp.csproj": {}
+    "F:\\projet_asp\\ASP.NET\\EmployeeApp\\EmployeeApp\\EmployeeApp.csproj": {}
   },
   "projects": {
-    "F:\\EmployeeApp\\EmployeeApp\\EmployeeApp.csproj": {
+    "F:\\projet_asp\\ASP.NET\\EmployeeApp\\EmployeeApp\\EmployeeApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\EmployeeApp\\EmployeeApp\\EmployeeApp.csproj",
+        "projectUniqueName": "F:\\projet_asp\\ASP.NET\\EmployeeApp\\EmployeeApp\\EmployeeApp.csproj",
         "projectName": "EmployeeApp",
-        "projectPath": "F:\\EmployeeApp\\EmployeeApp\\EmployeeApp.csproj",
+        "projectPath": "F:\\projet_asp\\ASP.NET\\EmployeeApp\\EmployeeApp\\EmployeeApp.csproj",
         "packagesPath": "C:\\Users\\doexe\\.nuget\\packages\\",
-        "outputPath": "F:\\EmployeeApp\\EmployeeApp\\obj\\",
+        "outputPath": "F:\\projet_asp\\ASP.NET\\EmployeeApp\\EmployeeApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -47,10 +47,6 @@
             "FluentValidation": {
               "target": "Package",
               "version": "[11.8.1, )"
-            },
-            "Microsoft.AspNet.Mvc": {
-              "target": "Package",
-              "version": "[5.3.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
