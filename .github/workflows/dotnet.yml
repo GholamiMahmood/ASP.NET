@@ -20,7 +20,9 @@ jobs:
       run: |
         cd EmployeeApp/EmployeeApp  # Change to the directory where the csproj file is located
         dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
+    - name: Change directory and build
+      run: |
+        cd EmployeeApp/EmployeeApp  # Change to the directory where the csproj file is located
+        dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
