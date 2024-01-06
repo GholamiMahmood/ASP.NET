@@ -1,5 +1,4 @@
 name: emplyee_component
-
 on:
   push:
     branches: [ "emplyee_component" ]
