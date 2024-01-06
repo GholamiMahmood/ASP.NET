@@ -1,4 +1,4 @@
-name: .NET
+name: emplyee_component
 
 on:
   push:
