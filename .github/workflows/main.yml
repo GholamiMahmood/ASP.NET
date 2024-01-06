@@ -18,8 +18,10 @@ jobs:
       with:
         dotnet-version: '6.0.x'  # Replace with the specific version you need
 
-    - name: Restore dependencies
-      run: dotnet restore
+    - name: Change directory and restore dependencies
+      run: |
+        cd EmployeeApp/TestClass_EmployeeAPP  # Change to the directory where the csproj file is located
+        dotnet restore
       
     - name: Change directory and test
       run: |
