@@ -1,4 +1,4 @@
-name: emplyee_component
+name: dotnet
 on:
   push:
     branches: [ "emplyee_component" ]
