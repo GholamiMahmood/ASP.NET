@@ -2,7 +2,7 @@ name: Nunit_test
 on:
   push:
     branches:
-      - test_component
+      - main
 
 jobs:
   run-tests:
