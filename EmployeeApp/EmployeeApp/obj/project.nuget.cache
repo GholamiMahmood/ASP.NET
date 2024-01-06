@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OPUlSphykBUby5MrzKm6kMj/sAoG2pKZz2PNcg85iKQtokYfD6hftxufa2sy0ur/tdYKOco8Q9hip0vAN9jPUQ==",
+  "dgSpecHash": "7TDUYmfF0kG10JQcs2lLpVkA4nBDejnPOkFZU3rylgDJWzvycTSJXEgHoZ4vUj6f42/WMVBBBlEo5CLWHfiIug==",
   "success": true,
   "projectFilePath": "F:\\projet_asp\\ASP.NET\\EmployeeApp\\EmployeeApp\\EmployeeApp.csproj",
   "expectedPackageFiles": [
@@ -88,6 +88,7 @@
     "C:\\Users\\doexe\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.14\\microsoft.entityframeworkcore.abstractions.7.0.14.nupkg.sha512",
     "C:\\Users\\doexe\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.14\\microsoft.entityframeworkcore.analyzers.7.0.14.nupkg.sha512",
     "C:\\Users\\doexe\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.0\\microsoft.entityframeworkcore.design.7.0.0.nupkg.sha512",
+    "C:\\Users\\doexe\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\7.0.14\\microsoft.entityframeworkcore.inmemory.7.0.14.nupkg.sha512",
     "C:\\Users\\doexe\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.0\\microsoft.entityframeworkcore.relational.7.0.0.nupkg.sha512",
     "C:\\Users\\doexe\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\6.0.23\\microsoft.entityframeworkcore.sqlite.6.0.23.nupkg.sha512",
     "C:\\Users\\doexe\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\6.0.23\\microsoft.entityframeworkcore.sqlite.core.6.0.23.nupkg.sha512",

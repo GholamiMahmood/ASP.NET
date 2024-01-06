@@ -914,3 +914,4 @@ F:\projet_asp\ASP.NET\EmployeeApp\EmployeeApp\obj\Debug\net6.0\refint\EmployeeAp
 F:\projet_asp\ASP.NET\EmployeeApp\EmployeeApp\obj\Debug\net6.0\EmployeeApp.pdb
 F:\projet_asp\ASP.NET\EmployeeApp\EmployeeApp\obj\Debug\net6.0\EmployeeApp.genruntimeconfig.cache
 F:\projet_asp\ASP.NET\EmployeeApp\EmployeeApp\obj\Debug\net6.0\ref\EmployeeApp.dll
+F:\projet_asp\ASP.NET\EmployeeApp\EmployeeApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
