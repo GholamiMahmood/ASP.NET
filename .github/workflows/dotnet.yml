@@ -1,9 +1,9 @@
 name: dotnet
 on:
   push:
-    branches: [ "emplyee_component" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "emplyee_component" ]
+    branches: [ "main" ]
 
 jobs:
   build:
