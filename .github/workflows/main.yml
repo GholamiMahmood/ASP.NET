@@ -3,7 +3,7 @@ name: Run NUnit Tests
 on:
   push:
     branches:
-      - main
+      - test_component
 
 jobs:
   run-tests:
