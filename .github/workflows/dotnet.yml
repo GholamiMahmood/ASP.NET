@@ -2,9 +2,9 @@ name: .NET
 
 on:
   push:
-    branches: [ "test_classTest" ]
+    branches: [ "emplyee_component" ]
   pull_request:
-    branches: [ "test_classTest" ]
+    branches: [ "emplyee_component" ]
 
 jobs:
   build:
