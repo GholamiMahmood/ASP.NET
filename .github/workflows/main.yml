@@ -16,10 +16,12 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.0.100'  # Replace with the specific version you need
+        dotnet-version: '6.0.x'  # Replace with the specific version you need
 
     - name: Restore dependencies
       run: dotnet restore
-
-    - name: Run NUnit tests
-      run: dotnet test --filter FullyQualifiedName=TestClass_EmployeeAPP.Tests
+      
+    - name: Change directory and test
+      run: |
+        cd EmployeeApp/TestClass_EmployeeAPP  # Change to the directory where the csproj file is located
+        dotnet test --filter FullyQualifiedName=TestClass_EmployeeAPP.Tests
