@@ -42,11 +42,12 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
+      @* c est une function qui appele la page de Index *@ 
+        @RenderBody()
         </main>
     </div>
     
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted" style="background-color:green;color:black">
         <div class="container" style="background-color:green;color:black">
             &copy; 2023 - EmployeeApp - <a style="color:black" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>

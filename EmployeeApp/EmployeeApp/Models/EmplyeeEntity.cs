@@ -5,6 +5,7 @@ namespace EmployeeApp.Models
 {
     public class EmplyeeEntity
     {
+       /* Id est primary key, quand on met[key], cela va etre change a primary key*/
        public int Id { get; set; }
        [Required]
        [RegularExpression(@"^\d{6}$", ErrorMessage = "Identifiant must be 6 digits")]
