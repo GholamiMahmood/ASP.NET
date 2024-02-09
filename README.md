@@ -1,6 +1,6 @@
 # Description du Projet
 
-Ce projet est une application de modèle MVC développée dans Visual Studio. La version utilisée est la version 6. L'objectif principal est de suivre une architecture d'application standard. L'application est conçue pour être utilisée par le département des ressources humaines d'une entreprise et n'est pas destinée au public.
+Ce projet est une application de modèle MVC développée dans Visual Studio.L'objectif principal est de suivre une architecture d'application standard. L'application est conçue pour être utilisée par le département des ressources humaines d'une entreprise et n'est pas destinée au public.
 
 ## Fonctionnalités Principales
 
