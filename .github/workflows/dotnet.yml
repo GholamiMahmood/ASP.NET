@@ -1,5 +1,4 @@
-name: .NET
-
+name: dotnet
 on:
   push:
     branches: [ "main" ]
