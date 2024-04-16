@@ -9,7 +9,7 @@ function registerSalary() {
                                         <!-- You can customize the header if needed -->\
                                     </div>\
                                     <div class="modal-body text-primary">\
-                                        Salaire est enregistré avec succès!\
+                                        Salary is successfully registered!\
                                     </div>\
                                 </div>\
                             </div>\

@@ -12,20 +12,7 @@
  </head>
        <body> 
        
-       @* 
-       //si on veut afficher l'information de personne , soit nom d'identifiant ou la list de salaire.    
-   
-       <p>@Context.Request.Query["identifiant"]</p> 
-         <div>
-            <h2>Salary List</h2>
-            <ul id="salaryList">
-                @foreach (var salary in Model)
-                {
-                    <li>@salary.Salaire, @salary.Date.ToString("yyyy-MM-dd")</li>
-                }
-            </ul>
-        </div> *@    
-        
+      
             <style>
                 table {
                     border-collapse: collapse;

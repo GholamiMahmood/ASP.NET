@@ -11,10 +11,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
 </head>
 <body>
-<h1>Recherche d'employé</h1>
+<h1>ID search :</h1>
 
 <form asp-action="Salaire" method="post">
-    <label for="personalId">Enter Identifiant:</label>
+    <label for="personalId">ID:</label>
     <input type="text" id="personalId" name="personalId" required>
     <button type="submit">Search</button>
 </form>
@@ -24,14 +24,14 @@
 {
     if (!string.IsNullOrEmpty(ViewData["SearchMessage"] as string))
     {
-        <p>@ViewData["SearchMessage"]</p>
+            <p>Employee with the specified Identifier does not exist.</p>
     }
     else if (Model != null)
     {
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th class="col-sm-2 tab_salaire1">Identifiant</th>
+                    <th class="col-sm-2 tab_salaire1">ID</th>
                     <th class="col-sm-2 tab_salaire1">FirstName</th>
                     <th class="col-sm-2 tab_salaire1">LastName</th>
                     <th class="col-sm-2 tab_salaire1">Department</th>
@@ -63,9 +63,9 @@
     <div id="salaryContainer">
         <form id="salaryForm" action="RegisterSalary" method="post">
             <hr/>
-            <h5>vous pouvez enregistre le salire de personne</h5>
+            <h5>you can save the salary:</h5>
 
-            <label for="salaire">Salaire:</label>
+            <label for="salaire">Salary:</label>
             <input type="text" id="salaire" name="salaire" required>
 
             <label for="date">Date:</label>
@@ -80,7 +80,7 @@
     @* button *@
     <br />
     <hr />
-    <button id="openMatrixButton" onclick="openMatrixButton(@Model.Identifiant)" class="btn btn-primary">affich l'histoire de salaire</button>
+    <button id="openMatrixButton" onclick="openMatrixButton(@Model.Identifiant)" class="btn btn-primary">Display Salary Table</button>
     }
 
 
